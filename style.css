@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "h1 h1 h1"
+    "header header header"
+    "banner banner offer1"
+    "banner banner offer2"
+    "side-menu main main"
+    "recent main main"
+    "tags main main"
+    "footer footer footer";
+
+}
+
+.wrapper > * {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+h1 {
+    background: rgb(112, 112, 204);
+    color: white;
+
+    grid-area: h1;
+}
+
+header {
+    background: rgb(231, 112, 8);
+
+    grid-area: header;
+}
+
+.banner {
+    min-height: 20vh;
+    background: linear-gradient(130deg, skyblue, lightgreen);
+
+    grid-area: banner;
+}
+
+.off1 {
+    background: palegoldenrod;
+
+    grid-area: offer1;
+}
+
+.off2 {
+    background: beige;
+
+    grid-area: offer2;
+}
+
+.side-menu {
+    background: rgb(127, 99, 99);
+
+    grid-area: side-menu;
+}
+
+.recent {
+    background: pink;
+
+    grid-area: recent;
+}
+
+.tags {
+    background: burlywood;
+
+    grid-area: tags;
+}
+
+.main {
+    background: #d47a7a;
+
+    grid-area: main;
+}
+
+footer {
+    background: black;
+    color: white;
+
+    grid-area: footer;
+}
+
+/* small laptops or tablets */
+@media (max-width: 992px) {
+    .wrapper {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "h1 h1"
+        "header header"
+        "banner banner"
+        "offer1 offer2"
+        "side-menu tags"
+        "main main"
+        "recent recent"
+        "footer footer";
+    
+    }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+    .wrapper {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "h1"
+        "header"
+        "banner"
+        "offer1"
+        "offer2"
+        "side-menu"
+        "tags"
+        "main"
+        "recent"
+        "footer";
+    
+    }
+}
